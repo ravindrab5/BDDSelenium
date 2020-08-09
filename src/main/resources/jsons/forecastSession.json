@@ -1,0 +1,68 @@
+{
+  "startDate": "2020-01-01",
+  "endDate": "2020-12-31",
+  "propertyId": "378",
+  "defaultCompareTo": "NONE",
+  "sessions": {
+    "2020-01-01:2020-01-31": [{
+      "sessionName": "January 2020",
+      "startLogic": "ACTUAL_STLY",
+      "compareTo": "NONE"
+    }],
+    "2020-02-01:2020-02-29": [{
+      "sessionName": "February 2020",
+      "startLogic": "ACTUAL_STLY",
+      "compareTo": "NONE"
+    }],
+    "2020-03-01:2020-03-31": [{
+      "sessionName": "March 2020",
+      "startLogic": "ACTUAL_STLY",
+      "compareTo": "NONE"
+    }],
+    "2020-04-01:2020-04-30": [{
+      "sessionName": "April 2020",
+      "startLogic": "ACTUAL_STLY",
+      "compareTo": "NONE"
+    }],
+    "2020-05-01:2020-05-31": [{
+      "sessionName": "May 2020",
+      "startLogic": "ACTUAL_STLY",
+      "compareTo": "NONE"
+    }],
+    "2020-06-01:2020-06-30": [{
+      "sessionName": "June 2020",
+      "startLogic": "ACTUAL_STLY",
+      "compareTo": "NONE"
+    }],
+    "2020-07-01:2020-07-31": [{
+      "sessionName": "July 2020",
+      "startLogic": "ACTUAL_STLY",
+      "compareTo": "NONE"
+    }],
+    "2020-08-01:2020-08-31": [{
+      "sessionName": "August 2020",
+      "startLogic": "ACTUAL_STLY",
+      "compareTo": "NONE"
+    }],
+    "2020-09-01:2020-09-30": [{
+      "sessionName": "September 2020",
+      "startLogic": "ACTUAL_STLY",
+      "compareTo": "NONE"
+    }],
+    "2020-10-01:2020-10-31": [{
+      "sessionName": "October 2020",
+      "startLogic": "ACTUAL_STLY",
+      "compareTo": "NONE"
+    }],
+    "2020-11-01:2020-11-30": [{
+      "sessionName": "November 2020",
+      "startLogic": "ACTUAL_STLY",
+      "compareTo": "NONE"
+    }],
+    "2020-12-01:2020-12-31": [{
+      "sessionName": "December 2020",
+      "startLogic": "ACTUAL_STLY",
+      "compareTo": "NONE"
+    }]
+  }
+}

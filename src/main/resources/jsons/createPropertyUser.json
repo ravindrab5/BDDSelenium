@@ -1,0 +1,63 @@
+{
+  "srNo": 7,
+  "userAccountId": null,
+  "firstName": "new",
+  "lastName": "user",
+  "title": "newuser",
+  "email": "newuser@abccs.com",
+  "displayName": "puser",
+  "role": "PROPERTYUSER",
+  "userAccess": ["Intel", "Planning", "Management"],
+  "status": true,
+  "currentAction": "editing",
+  "moduleLevelAccessInfo": [{
+    "intel": [{
+      "name": "Rooms",
+      "subModules": [{
+        "name": "Pace & Pickup",
+        "module": "PACE_PICKUP",
+        "isEditable": true,
+        "action": "READ"
+      }, {
+        "name": "Group Analytics",
+        "module": "GROUP_ANALYTICS",
+        "isEditable": true,
+        "action": "READ"
+      }]
+    }]
+  }, {
+    "planning": [{
+      "name": "Revenue",
+      "subModules": [{
+        "name": "Rooms",
+        "module": "ROOMS",
+        "isEditable": true,
+        "action": "READ"
+      }, {
+        "name": "Food & Beverage",
+        "module": "FOOD_BEVERAGE",
+        "isEditable": true,
+        "action": "READ"
+      }]
+    }, {
+      "name": "Forecasting",
+      "subModules": [{
+        "name": "Rooms Forecasting",
+        "module": "ROOMS_FORECASTING",
+        "isEditable": true,
+        "action": "READ"
+      }, {
+        "name": "Resident Guest Forecasting",
+        "module": "RESIDENT_GUEST_FORECASTING",
+        "isEditable": true
+      }]
+    }]
+  }, {
+    "management": [{
+      "name": "Summaries",
+      "subModules": []
+    }]
+  }],
+  "managementCompanyId": "1",
+  "propertyId": "2"
+}

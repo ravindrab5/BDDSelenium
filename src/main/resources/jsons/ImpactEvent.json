@@ -1,0 +1,55 @@
+[{
+  "name": "Independence Day",
+  "revImpact": "All Revenue",
+  "effect": "Positive",
+  "type": "Fair & Convention & Congress",
+  "frequency": "REPEATING",
+  "managementCompanyId": "3",
+  "propertyId": "5",
+  "interval": "Annual",
+  "duration": "1",
+  "eventInstances": [{
+    "startDate": "2020-08-15",
+    "endDate": "2020-08-15"
+  },
+    {
+      "startDate": "2019-08-15",
+      "endDate": "2019-08-15"
+    },
+    {
+      "startDate": "2018-08-15",
+      "endDate": "2018-08-15"
+    },
+    {
+      "startDate": "2017-08-15",
+      "endDate": "2017-08-15"
+    }
+  ]
+}, {
+  "name": "Republic Day",
+  "revImpact": "All Revenue",
+  "effect": "Positive",
+  "type": "Fair & Convention & Congress",
+  "frequency": "REPEATING",
+  "managementCompanyId": "3",
+  "propertyId": "5",
+  "interval": "Annual",
+  "duration": "1",
+  "eventInstances": [{
+    "startDate": "2020-01-26",
+    "endDate": "2020-01-26"
+  },
+    {
+      "startDate": "2019-01-26",
+      "endDate": "2019-01-26"
+    },
+    {
+      "startDate": "2018-01-26",
+      "endDate": "2018-01-26"
+    },
+    {
+      "startDate": "2017-01-26",
+      "endDate": "2017-01-26"
+    }
+  ]
+}]

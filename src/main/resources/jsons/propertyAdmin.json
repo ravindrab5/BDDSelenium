@@ -1,0 +1,15 @@
+{
+  "srNo": 1,
+  "userAccountId": null,
+  "firstName": "newpadmin",
+  "lastName": "admin",
+  "title": "padmin",
+  "email": "newpadmin@xyz.com",
+  "displayName": "padmin",
+  "role": "PROPERTYADMIN",
+  "userAccess": ["Property Admin"],
+  "status": true,
+  "currentAction": "editing",
+  "managementCompanyId": "3",
+  "propertyId": "5"
+}

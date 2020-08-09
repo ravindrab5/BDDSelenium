@@ -1,0 +1,14 @@
+{
+  "srNo": 5,
+  "userAccountId": null,
+  "firstName": "new3user",
+  "lastName": "new3user",
+  "title": "newuser3",
+  "email": "newuser4@gmail.com",
+  "displayName": "newuseradmin",
+  "role": "MANAGEMENTCOMPANYADMIN",
+  "userAccess": ["Admin Access"],
+  "status": true,
+  "currentAction": "editing",
+  "managementCompanyId": "4"
+}
