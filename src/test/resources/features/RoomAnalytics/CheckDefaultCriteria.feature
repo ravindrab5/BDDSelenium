@@ -20,7 +20,7 @@ Feature: Check Default criteria & display criteria of room analytics.
     When I Select "Active" in primary, same range should not have "Active" as option.
     When I Select "Budget" in primary, same range should not have "Budget" as option.
 
-    @SupplierTest
+    @thisone
   Scenario Outline: Check Comparative dropdown text as per selection.
     Given Report criteria should be open and calender,primary data should be selected.
     When I select <datasource> in comparative dropdowns.
