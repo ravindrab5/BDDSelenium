@@ -42,7 +42,7 @@ post {
                 allowMissing: false,
                 alwaysLinkToLastBuild: false,
                 keepAll: true,
-                reportDir: 'target\cucumber-reports\cucumber-pretty',
+                reportDir: 'target/cucumber-reports/cucumber-pretty',
                 reportFiles: 'index.html',
                 reportName: 'HTML Report'
               ]
