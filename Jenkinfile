@@ -3,7 +3,7 @@ agent any
     parameters {
              choice(
                 name: 'ENVIRONMENT',
-                choices:"localhost\qa1\qa2",
+                choices:"localhost\nqa1\nqa2",
                 description: "Environment of the tests" )
      }
    stages {
