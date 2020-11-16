@@ -1,1 +1,1 @@
-@checkdisplaycriteria,@reportcriteria
+@checkdisplaycriteria

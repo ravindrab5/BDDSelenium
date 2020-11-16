@@ -42,8 +42,8 @@ post {
                 allowMissing: false,
                 alwaysLinkToLastBuild: false,
                 keepAll: true,
-                reportDir: 'Results',
-                reportFiles: 'result.html',
+                reportDir: 'target\cucumber-reports\cucumber-pretty',
+                reportFiles: 'index.html',
                 reportName: 'HTML Report'
               ]
   }
