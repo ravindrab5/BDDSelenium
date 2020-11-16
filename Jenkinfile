@@ -37,6 +37,15 @@ stage('Run Tests'){
 post {
   always {
     junit "**/TEST-com.ideas.chimps.bddselenium.tests.TestRunner.xml"
+
+    publishHTML target: [
+                allowMissing: false,
+                alwaysLinkToLastBuild: false,
+                keepAll: true,
+                reportDir: 'Results',
+                reportFiles: 'result.html',
+                reportName: 'HTML Report'
+              ]
   }
 }
 }

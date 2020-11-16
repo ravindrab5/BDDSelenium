@@ -14,13 +14,14 @@ Feature: Check Default criteria & display criteria of room analytics.
     And  Occ % should have minimum of 0 & maximum of 100 value.
     And  Segment Category,Sub-Totals,Pms Segments should have data as configured for that property.
 
+  @thisone
   Scenario: Check Report Criteria drop down data validations with Date Range.
     When I select Date range and then select primary data.
     Then All dropdowns of the Comparative data gets enabled.
     When I Select "Active" in primary, same range should not have "Active" as option.
     When I Select "Budget" in primary, same range should not have "Budget" as option.
 
-    @thisone
+
   Scenario Outline: Check Comparative dropdown text as per selection.
     Given Report criteria should be open and calender,primary data should be selected.
     When I select <datasource> in comparative dropdowns.
