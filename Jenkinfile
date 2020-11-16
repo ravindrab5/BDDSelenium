@@ -3,7 +3,7 @@ agent any
     parameters {
              choice(
                 name: 'ENVIRONMENT',
-                choices:"eu_prod\nus_prod",
+                choices:"localhost\qa1\qa2",
                 description: "Environment of the tests" )
      }
    stages {
