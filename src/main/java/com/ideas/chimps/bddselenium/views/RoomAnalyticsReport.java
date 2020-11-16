@@ -22,13 +22,13 @@ public class RoomAnalyticsReport extends PageBase{
     }
 
     public List<String> getMetricOptionForPrimary(String columnName){
-        uiWait.waitTillElementVisibility(driver.findElement(By.xpath("//th[text()='"+columnName+"']")));
+        uiWait.waitTillElementVisibility(driver.findElement(By.xpath("//th[span[text()='"+columnName+"']]")));
 
-        List<WebElement> elements=driver.findElements(By.xpath("//table[thead[tr[th[text()='"+columnName+"']]]]/thead/tr[2]/th[contains(@class,'is-fixed-left ember-view bg-sky')]"));
+        List<WebElement> elements=driver.findElements(By.xpath("//table[thead[tr[th[span[text()='"+columnName+"']]]]]/thead/tr[2]/th[contains(@class,'is-fixed-left ember-view bg-sky')]"));
         List<String> allText= new ArrayList<>();
         List<WebElement> allElements=null;
         for(int i=0;i<elements.size();i++){
-            allElements=driver.findElements(By.xpath("//table[thead[tr[th[text()='"+columnName+"']]]]/thead/tr[2]/th[contains(@class,'is-fixed-left ember-view bg-sky')]"));
+            allElements=driver.findElements(By.xpath("//table[thead[tr[th[span[text()='"+columnName+"']]]]]/thead/tr[2]/th[contains(@class,'is-fixed-left ember-view bg-sky')]"));
             allText.add(allElements.get(i).getText());
         }
         return allText;

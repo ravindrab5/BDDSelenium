@@ -24,11 +24,11 @@ public class PropertyHomePage extends PageBase {
     private WebElement planningButton;
 
     @UIName(uiName = "REVENUE ANALYTICS")
-    @FindBy(xpath="//a[text()='Revenue Analytics']")
+    @FindBy(xpath="//a[text()='Revenue']")
     private WebElement revAnalyticsOptionInPlanning;
 
     @UIName(uiName = "ROOMS")
-    @FindBy(xpath="//li[a[text()='Revenue Analytics']]/ul/li/a[text()='Rooms']")
+    @FindBy(xpath="//li[a[text()='Revenue']]/ul/li/a[text()='Rooms']")
     private WebElement roomsInRevAnalyticsOfPlanning;
 
     public RoomTrendDashBoard navigateToRoomTrend(){

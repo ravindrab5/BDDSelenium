@@ -92,7 +92,9 @@ public class ApiController {
         String loginJson="{\"uniqueEmail\":\""+environment.getMarsUser()+"\",\"password\":\""+environment.getMarsUserPass()+"\"}";
         logger.info("Logging into the system with payload "+loginJson);
 
-        baseURI=commonConfig.getBaseApiUrl();
+        baseURI=environment.getApiUrl();
+
+        logger.info("Base Uri - "+baseURI);
 
         Response response=given().header("content-type", "application/json").when().body(loginJson).post(apiConfig.getAuth());
 
@@ -109,7 +111,7 @@ public class ApiController {
         String payload=getJsonStringFromEntity(managementCompany);
         logger.info("Creating the management company with payload "+payload+" PUT "+apiConfig.getManagementCompany());
 
-        baseURI=commonConfig.getBaseApiUrl();
+        baseURI=environment.getApiUrl();
 
         Response response=given().header("content-type", "application/json").header("Authorization", "Bearer "+loginToken).when().body(payload).post(apiConfig.getManagementCompany());  // Creating the management company.
         logger.info("Response : "+response.statusCode()+" | "+response.statusLine());
@@ -134,7 +136,7 @@ public class ApiController {
 
         String api=apiConfig.getGeoSetup().replace("#managementId",String.valueOf(managementCompany.getManagementCompanyId()));
 
-        baseURI=commonConfig.getBaseApiUrl();
+        baseURI=environment.getApiUrl();
 
 
         Response response=given().header("content-type", "application/json").header("Authorization", "Bearer "+loginToken).when().body(payload).post(api);
@@ -151,11 +153,13 @@ public class ApiController {
         String payload=getJsonStringFromEntity(managementSegmentTypes);
         logger.info("Define the segment type + "+payload);
 
-        Response response=given().header("content-type", "application/json").header("Authorization", "Bearer "+loginToken).when().body(payload).post(apiConfig.getManagementSegmentTypes());
+        Response response=given().header("content-type", "application/json").header("Authorization", "Bearer "+loginToken).when().body(payload).post(apiConfig.getManagementSegmentTypes()+"/"+managementCompany.getClientCode());
         logger.info("Response + "+response.statusCode()+" | "+response.getStatusLine());
-
+        logger.info("Response - " + response.getBody().prettyPrint());
         return response;
     }
+
+
 
     public Response defineSegmentCategoryStructure(){
         segmentStruture=managementCompanyData.getSegmentStruture(managementSegmentTypeDTO);
@@ -163,26 +167,40 @@ public class ApiController {
         String payload=getJsonStringFromEntity(segmentStruture);
         logger.info("Defining management company segment category structure - "+payload);
 
-        Response response=given().header("content-type", "application/json").header("Authorization", "Bearer "+loginToken).when().body(payload).post(apiConfig.getMarketSegmentStructure());
+        Response response=given().header("content-type", "application/json").header("Authorization", "Bearer "+loginToken).when().body(payload).post(apiConfig.getMarketSegmentStructure()+"/"+managementCompany.getClientCode());
         logger.info("Response + "+response.statusCode()+" | "+response.getStatusLine());
 
         return response;
     }
 
     public Response createProperty(){
-
+        baseURI=environment.getApiUrl();
+        logger.info("Base uri "+environment.getApiUrl());
         property=managementCompanyData.getProperty(String.valueOf(managementCompany.getManagementCompanyId()));
         String payload=getJsonStringFromEntity(property);
         logger.info("Creating property - "+payload);
+        logger.info("Api path - "+apiConfig.getCreateProperty()+"/"+managementCompany.getClientCode());
+        Response response=given()
+                .header("content-type", "application/json")
+                .header("Authorization", "Bearer "+loginToken)
+                .when()
+                .body(payload).post(apiConfig.getCreateProperty()+"/"+managementCompany.getClientCode().toLowerCase());
 
-        Response response=given().header("content-type", "application/json").header("Authorization", "Bearer "+loginToken).when().body(payload).post(apiConfig.getCreateProperty());
+
+        logger.info("Response + "+response.statusCode()+" | "+response.getStatusLine());
+        logger.info("Response + "+response.getBody());
+
+
         String jsonPath="$..propertyId";
         String responseJson=response.getBody().asString();
+
         JSONArray propertyId= JsonPath.read(responseJson,jsonPath);
+
 
         Integer propId=Integer.parseInt(String.valueOf(propertyId.get(0)));
 
         logger.info("Response + "+response.statusCode()+" | "+response.getStatusLine());
+        logger.info("Response + "+response.getBody());
 
         property.setPropertyId(propId);
         return response;
@@ -270,7 +288,12 @@ public class ApiController {
             queryParams.put("endDate", "2020-12-31");
             String payload = getJsonStringFromEntity(event);
             logger.info("Creating impact event with + " + payload);
-            Response response = given().header("content-type", "application/json").header("Authorization", "Bearer " + loginToken).when().body(payload).queryParams(queryParams).post(apiConfig.getImpactEvent());
+            Response response = given().header("content-type", "application/json").header("Authorization", "Bearer " + loginToken)
+                    .when()
+                    .log().all()
+                    .body(payload)
+                    .queryParams(queryParams)
+                    .post(apiConfig.getImpactEvent()+"/"+managementCompany.getClientCode().toLowerCase()+"/"+property.getPmsId());
             logger.info("Response + " + response.statusCode() + " | " + response.getStatusLine());
             if(response.statusCode()==200){
                 impactEvents.add(event);

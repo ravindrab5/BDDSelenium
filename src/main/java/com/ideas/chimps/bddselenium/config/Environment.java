@@ -17,5 +17,8 @@ public class Environment {
     @Value("${mars_user}")
     private String marsUser;
 
+    @Value("${api_url}")
+    private String apiUrl;
+
 }
 
