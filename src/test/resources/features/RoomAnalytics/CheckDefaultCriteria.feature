@@ -31,7 +31,6 @@ Feature: Check Default criteria & display criteria of room analytics.
       |Budget      |Budget        |
       |All         |All Metrics Selected |
 
-    @impactEventTest
   Scenario: Validate impact event behaviour in report criteria.
     Given There should be impact event present for the property.
     When I select impact event year "2020".

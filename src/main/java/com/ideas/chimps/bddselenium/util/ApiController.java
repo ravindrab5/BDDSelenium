@@ -274,7 +274,6 @@ public class ApiController {
 
     public void createImpactEvent(){
         org.json.simple.JSONArray jsonlist=(org.json.simple.JSONArray)getDataFromFile(jsonConfig.getImpactEvent());
-        logger.info("Impact event read - "+jsonlist);
         impactEvents=new ArrayList<>();
         for(Object ievent:jsonlist) {
             ImpactEvent event = (ImpactEvent) jsonMapper.getData(ievent.toString(), ImpactEvent.class);
@@ -313,8 +312,6 @@ public class ApiController {
 
     private Object getDataFromFile(String path){
         InputStream filename =this.getClass().getClassLoader().getResourceAsStream(path);
-                //.getFile();
-        logger.info("Impact event read filename - "+filename);
         JSONParser parser = new JSONParser();
         Object obj=null;
         try {
@@ -322,7 +319,6 @@ public class ApiController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        logger.info("Impact event read parsed - "+obj.toString());
         return obj;
     }
 
