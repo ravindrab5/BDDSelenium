@@ -322,6 +322,7 @@ public class ApiController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        logger.info("Impact event read parsed - "+obj.toString());
         return obj;
     }
 
