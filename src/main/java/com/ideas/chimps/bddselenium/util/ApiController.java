@@ -21,8 +21,7 @@ import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -313,12 +312,13 @@ public class ApiController {
     }
 
     private Object getDataFromFile(String path){
-        String filename =this.getClass().getClassLoader().getResource(path).getFile();
+        InputStream filename =this.getClass().getClassLoader().getResourceAsStream(path);
+                //.getFile();
         logger.info("Impact event read filename - "+filename);
         JSONParser parser = new JSONParser();
         Object obj=null;
         try {
-            obj = parser.parse(new FileReader(filename));
+            obj = parser.parse(new InputStreamReader(filename));
         } catch (Exception e) {
             e.printStackTrace();
         }
