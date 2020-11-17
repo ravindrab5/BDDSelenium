@@ -46,6 +46,8 @@ post {
                 reportFiles: 'result.html',
                 reportName: 'HTML Report'
               ]
+
+    cucumber fileIncludePattern: '**/target/cucumber-reports/cucumber-report.json', sortingMethod: 'ALPHABETICAL'
   }
 }
 }
