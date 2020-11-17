@@ -22,6 +22,7 @@ public class RoomAnalyticsReport extends PageBase{
     }
 
     public List<String> getMetricOptionForPrimary(String columnName){
+        uiWait.waitTillElementInVisibility(driver.findElement(By.id("wait")));
         uiWait.waitTillElementVisibility(driver.findElement(By.xpath("//th[span[text()='"+columnName+"']]")));
 
         List<WebElement> elements=driver.findElements(By.xpath("//table[thead[tr[th[span[text()='"+columnName+"']]]]]/thead/tr[2]/th[contains(@class,'is-fixed-left ember-view bg-sky')]"));

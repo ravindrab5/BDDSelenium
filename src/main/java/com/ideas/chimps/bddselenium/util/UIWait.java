@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -25,6 +26,19 @@ public class UIWait {
         boolean status=false;
         try {
             wait.until(ExpectedConditions.visibilityOf(element));
+            status=true;
+        }catch(TimeoutException e) {
+            log.debug("Element not visible - " + e);
+        }
+        return status;
+
+    }
+
+    public boolean waitTillElementInVisibility(WebElement element) {
+        log.info("Waiting for element invisibility ");
+        boolean status=false;
+        try {
+            wait.until(ExpectedConditions.invisibilityOf(element));
             status=true;
         }catch(TimeoutException e) {
             log.debug("Element not visible - " + e);
