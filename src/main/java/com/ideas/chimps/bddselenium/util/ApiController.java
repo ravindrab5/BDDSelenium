@@ -314,6 +314,7 @@ public class ApiController {
 
     private Object getDataFromFile(String path){
         String filename =this.getClass().getClassLoader().getResource(path).getFile();
+        logger.info("Impact event read filename - "+filename);
         JSONParser parser = new JSONParser();
         Object obj=null;
         try {
