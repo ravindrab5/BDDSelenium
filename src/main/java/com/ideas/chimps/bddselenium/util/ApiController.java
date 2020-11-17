@@ -275,6 +275,7 @@ public class ApiController {
 
     public void createImpactEvent(){
         org.json.simple.JSONArray jsonlist=(org.json.simple.JSONArray)getDataFromFile(jsonConfig.getImpactEvent());
+        logger.info("Impact event read - "+jsonlist);
         impactEvents=new ArrayList<>();
         for(Object ievent:jsonlist) {
             ImpactEvent event = (ImpactEvent) jsonMapper.getData(ievent.toString(), ImpactEvent.class);
