@@ -16,4 +16,10 @@ public class JsonConfig {
     @Value("${forecastSession}")
     private String forecastSession;
 
+    @Value("${companyprofile}")
+    private String companyProfile;
+
+    @Value("${companyprofilereservation}")
+    private String companyProfileReservation;
+
 }

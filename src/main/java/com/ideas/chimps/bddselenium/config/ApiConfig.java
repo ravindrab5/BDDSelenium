@@ -55,4 +55,11 @@ public class ApiConfig {
 
     @Value("${setPassword}")
     private String setPassword;
+
+    @Value("${companyProfile}")
+    private String companyProfile;
+
+    @Value("${companyProfileReservation}")
+    private String companyProfileReservation;
+
 }

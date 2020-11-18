@@ -27,6 +27,7 @@ Feature: Validate display criteria functionality.
       And Select all inventory options,adr option and click on go.
       Then Report should have rows added for statistics option and adr option.
 
+  @checkstaleelement
     Scenario: Validate if all category,sub category & market segment present.
       Given Report criteria should be selected with required minimum criteria.
       When I open the display criteria.

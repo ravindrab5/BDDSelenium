@@ -53,6 +53,8 @@ public class TestContext {
         controller.createCompanySegment();
         controller.createSegment();
         controller.generateRdpData();
+        controller.createCompanyProfiles();
+        controller.createCompanyProfileReservation();
     }
 
     protected void tearDownManagementCompanyProperty(){

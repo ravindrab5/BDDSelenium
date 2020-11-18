@@ -1,0 +1,197 @@
+[{
+  "companyProfileID" : "1251130",
+  "propertyId" : 692,
+  "companyProfileName" : "Boston Consulting Group",
+  "contract" : false,
+  "createdDate" : "2020-02-08T00:00:00.000+0000",
+  "dataType" : "SYSTEM_DEFINED",
+  "lastModifiedDate" : "2020-02-08T00:00:00.000+0000",
+  "status" : "PENDING"
+},
+  {
+    "companyProfileID" : "15401",
+    "propertyId" : 692,
+    "companyProfileName" : "Danish Government",
+    "contract" : false,
+    "createdDate" : "2020-02-08T00:00:00.000+0000",
+    "dataType" : "SYSTEM_DEFINED",
+    "lastModifiedDate" : "2020-02-08T00:00:00.000+0000",
+    "masterCompanyProfileID" : "4181666",
+    "status" : "PENDING"
+  },
+  {
+    "propertyId" : 692,
+    "companyProfileID" : "4181666",
+    "companyProfileName" : "Airbus Group",
+    "status" : "PENDING",
+    "contract" : false,
+    "createdDate" : "2020-02-08T00:00:00.000+0000",
+    "lastModifiedDate" : "2020-02-08T00:00:00.000+0000",
+    "dataType" : "SYSTEM_DEFINED"
+  },
+  {
+    "companyProfileID" : "13144663",
+    "propertyId" : 692,
+    "companyProfileName" : "CHAP BB",
+    "contract" : false,
+    "createdDate" : "2020-02-08T00:00:00.000+0000",
+    "dataType" : "SYSTEM_DEFINED",
+    "lastModifiedDate" : "2020-02-08T00:00:00.000+0000",
+    "masterCompanyProfileID" : "13312967",
+    "status" : "PENDING"
+  },
+  {
+    "companyProfileID" : "141928",
+    "propertyId" : 692,
+    "companyProfileName" : "Fortum Corporation",
+    "contract" : false,
+    "createdDate" : "2020-02-08T00:00:00.000+0000",
+    "dataType" : "SYSTEM_DEFINED",
+    "lastModifiedDate" : "2020-02-08T00:00:00.000+0000",
+    "status" : "PENDING"
+  },
+  {
+    "companyProfileID" : "13312967",
+    "propertyId" : 692,
+    "companyProfileName" : "CHAP BB test",
+    "contract" : false,
+    "createdDate" : "2020-02-08T00:00:00.000+0000",
+    "dataType" : "SYSTEM_DEFINED",
+    "lastModifiedDate" : "2020-02-08T00:00:00.000+0000",
+    "status" : "PENDING"
+  },
+  {
+    "companyProfileID" : "33919",
+    "propertyId" : 692,
+    "companyProfileName" : "Eli Lilly & Company",
+    "contract" : true,
+    "createdDate" : "2020-02-08T00:00:00.000+0000",
+    "dataType" : "SYSTEM_DEFINED",
+    "lastModifiedDate" : "2020-02-08T00:00:00.000+0000",
+    "status" : "ACCEPTED"
+  },
+  {
+    "companyProfileID" : "711174",
+    "propertyId" : 692,
+    "companyProfileName" : "Eurocontrol",
+    "contract" : true,
+    "createdDate" : "2020-02-08T00:00:00.000+0000",
+    "dataType" : "SYSTEM_DEFINED",
+    "lastModifiedDate" : "2020-02-08T00:00:00.000+0000",
+    "masterCompanyProfileID" : "33919",
+    "status" : "ACCEPTED"
+  },
+
+  {
+    "companyProfileID" : "13728774",
+    "propertyId" : 692,
+    "companyProfileName" : "Inditex",
+    "contract" : false,
+    "createdDate" : "2020-02-08T00:00:00.000+0000",
+    "dataType" : "SYSTEM_DEFINED",
+    "lastModifiedDate" : "2020-02-08T00:00:00.000+0000",
+    "status" : "ACCEPTED"
+  },
+  {
+    "companyProfileID" : "869954",
+    "propertyId" : 692,
+    "companyProfileName" : "Microsoft Corporation",
+    "contract" : true,
+    "createdDate" : "2020-02-08T00:00:00.000+0000",
+    "dataType" : "SYSTEM_DEFINED",
+    "lastModifiedDate" : "2020-02-08T00:00:00.000+0000",
+    "status" : "ACCEPTED"
+  },
+  {
+    "companyProfileID" : "869957",
+    "propertyId" : 692,
+    "companyProfileName" : "FireFly",
+    "contract" : true,
+    "createdDate" : "2020-02-08T00:00:00.000+0000",
+    "dataType" : "SYSTEM_DEFINED",
+    "lastModifiedDate" : "2020-02-08T00:00:00.000+0000",
+    "masterCompanyProfileID" : "869954",
+    "status" : "ACCEPTED"
+  },
+  {
+    "companyProfileID" : "13776885",
+    "propertyId" : 692,
+    "companyProfileName" : "Kuoni Group",
+    "contract" : false,
+    "createdDate" : "2020-02-08T00:00:00.000+0000",
+    "dataType" : "SYSTEM_DEFINED",
+    "lastModifiedDate" : "2020-02-08T00:00:00.000+0000",
+    "status" : "EXCLUDED"
+  },
+  {
+    "companyProfileID" : "1341669",
+    "propertyId" : 692,
+    "companyProfileName" : "Lego Systems Inc",
+    "contract" : false,
+    "createdDate" : "2020-02-08T00:00:00.000+0000",
+    "dataType" : "SYSTEM_DEFINED",
+    "lastModifiedDate" : "2020-02-08T00:00:00.000+0000",
+    "masterCompanyProfileID" : "13776885",
+    "status" : "EXCLUDED"
+  },
+  {
+    "companyProfileID" : "13668589",
+    "propertyId" : 692,
+    "companyProfileName" : "National Oilwell Varco",
+    "contract" : true,
+    "createdDate" : "2020-02-08T00:00:00.000+0000",
+    "dataType" : "SYSTEM_DEFINED",
+    "lastModifiedDate" : "2020-02-08T00:00:00.000+0000",
+    "status" : "ACCEPTED"
+  },
+  {
+    "companyProfileID" : "5000000",
+    "propertyId" : 692,
+    "companyProfileName" : "New accenture",
+    "contract" : false,
+    "createdDate" : "2020-02-08T00:00:00.000+0000",
+    "dataType" : "SYSTEM_DEFINED",
+    "lastModifiedDate" : "2020-02-08T00:00:00.000+0000",
+    "status" : "EXCLUDED"
+  },
+  {
+    "companyProfileID" : "10121983",
+    "propertyId" : 692,
+    "companyProfileName" : "Norges Fotballforbund",
+    "contract" : false,
+    "createdDate" : "2020-02-08T00:00:00.000+0000",
+    "dataType" : "SYSTEM_DEFINED",
+    "lastModifiedDate" : "2020-02-08T00:00:00.000+0000",
+    "status" : "EXCLUDED"
+  },
+  {
+    "companyProfileID" : "36551",
+    "propertyId" : 692,
+    "companyProfileName" : "PricewaterhouseCoopers",
+    "contract" : false,
+    "createdDate" : "2020-02-08T00:00:00.000+0000",
+    "dataType" : "SYSTEM_DEFINED",
+    "lastModifiedDate" : "2020-02-08T00:00:00.000+0000",
+    "status" : "PENDING"
+  },
+  {
+    "companyProfileID" : "34668",
+    "propertyId" : 692,
+    "companyProfileName" : "Norwegian Government",
+    "contract" : false,
+    "createdDate" : "2020-02-08T00:00:00.000+0000",
+    "dataType" : "SYSTEM_DEFINED",
+    "lastModifiedDate" : "2020-02-08T00:00:00.000+0000",
+    "status" : "EXCLUDED"
+  },
+  {
+    "companyProfileID" : "407901",
+    "propertyId" : 692,
+    "companyProfileName" : "Norwegian Research",
+    "contract" : false,
+    "createdDate" : "2020-02-08T00:00:00.000+0000",
+    "dataType" : "SYSTEM_DEFINED",
+    "lastModifiedDate" : "2020-02-08T00:00:00.000+0000",
+    "masterCompanyProfileID" : "34668",
+    "status" : "EXCLUDED"
+  }]

@@ -12,6 +12,8 @@ import com.ideas.chimps.bddselenium.config.CommonConfig;
 import com.ideas.chimps.bddselenium.config.Environment;
 import com.ideas.chimps.bddselenium.config.JsonConfig;
 import com.ideas.chimps.bddselenium.entities.*;
+import com.ideas.chimps.bddselenium.entities.accountintel.CompanyProfile;
+import com.ideas.chimps.bddselenium.entities.accountintel.PMSStayRaw;
 import com.jayway.jsonpath.JsonPath;
 import io.restassured.response.Response;
 import lombok.Getter;
@@ -80,6 +82,10 @@ public class ApiController {
     private String loginToken;
 
     private List<ImpactEvent> impactEvents;
+
+    private List<CompanyProfile> companyProfiles;
+
+    private List<PMSStayRaw> pmsStayRaws;
 
     private User user;
 
@@ -299,6 +305,49 @@ public class ApiController {
             }
         }
     }
+    
+    public void createCompanyProfiles(){
+        org.json.simple.JSONArray jsonlist=(org.json.simple.JSONArray)getDataFromFile(jsonConfig.getCompanyProfile());
+
+        companyProfiles=new ArrayList<>();
+        for(Object ievent:jsonlist) {
+            CompanyProfile profile = (CompanyProfile) jsonMapper.getData(ievent.toString(), CompanyProfile.class);
+            profile.setPropertyId(property.getPropertyId());
+            companyProfiles.add(profile);
+        }
+            String payload = getJsonStringFromEntity(companyProfiles);
+
+            logger.info("Creating companyProfile  with + " + payload);
+            Response response = given().header("content-type", "application/json").header("Authorization", "Bearer " + loginToken)
+                    .when()
+                    .body(payload)
+                    .post(apiConfig.getCompanyProfile());
+            logger.info("Response + " + response.statusCode() + " | " + response.getStatusLine());
+
+
+    }
+
+    public void createCompanyProfileReservation(){
+        org.json.simple.JSONArray jsonlist=(org.json.simple.JSONArray)getDataFromFile(jsonConfig.getCompanyProfileReservation());
+
+        pmsStayRaws=new ArrayList<>();
+        for(Object ievent:jsonlist) {
+            PMSStayRaw profile = (PMSStayRaw) jsonMapper.getData(ievent.toString(), PMSStayRaw.class);
+            profile.setPropertyId(property.getPropertyId());
+            pmsStayRaws.add(profile);
+        }
+        String payload = getJsonStringFromEntity(pmsStayRaws);
+
+        logger.info("Creating companyProfile  with + " + payload);
+        Response response = given().header("content-type", "application/json").header("Authorization", "Bearer " + loginToken)
+                .when()
+                .body(payload)
+                .post(apiConfig.getCompanyProfileReservation());
+        logger.info("Response + " + response.statusCode() + " | " + response.getStatusLine());
+
+
+    }
+
 
     public User createNewUser(String userTypeConstants,Map<String,String> permissions){
 
