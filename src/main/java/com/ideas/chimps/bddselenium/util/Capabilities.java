@@ -13,6 +13,7 @@ public class Capabilities {
 
             ChromeOptions options = new ChromeOptions();
             options.addArguments("test-type");
+            options.addArguments("--headless");
 
             capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 
