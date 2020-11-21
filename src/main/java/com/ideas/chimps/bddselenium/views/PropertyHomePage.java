@@ -3,6 +3,7 @@ package com.ideas.chimps.bddselenium.views;
 
 import com.ideas.chimps.bddselenium.util.UIName;
 import lombok.Getter;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -23,6 +24,20 @@ public class PropertyHomePage extends PageBase {
     @FindBy(xpath="//a[text()='Planning']")
     private WebElement planningButton;
 
+    @UIName(uiName = "INTEL BUTTON")
+    @FindBy(xpath="//a[text()='Intel']")
+    private WebElement intelButton;
+
+    @UIName(uiName = "ACCOUNTS SUBMENU")
+    @FindBy(xpath="//li[a[text()='Accounts']]/ul/li/a[text()='Accounts']")
+    private WebElement accountsSubmenu;
+
+    @UIName(uiName = "ACCOUNTS MENU")
+    @FindBy(xpath="//a[text()='Accounts']")
+    private WebElement accountsInmenu;
+
+
+
     @UIName(uiName = "REVENUE ANALYTICS")
     @FindBy(xpath="//a[text()='Revenue']")
     private WebElement revAnalyticsOptionInPlanning;
@@ -37,4 +52,10 @@ public class PropertyHomePage extends PageBase {
         return new RoomTrendDashBoard(driver);
     }
 
+    public ProfileManagementPage navigateToAccounts(){
+        Actions actions=new Actions(driver);
+        actions.moveToElement(intelButton).moveToElement(accountsInmenu).moveToElement(accountsSubmenu).click().build().perform();
+        actions.moveToElement(driver.findElement(By.xpath("//a[contains(text(),'Profile Status')]"))).build().perform();
+        return new ProfileManagementPage(driver);
+    }
 }

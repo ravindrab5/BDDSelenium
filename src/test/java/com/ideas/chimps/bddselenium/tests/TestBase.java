@@ -38,6 +38,8 @@ public class TestBase extends AbstractTestNGSpringContextTests {
     protected CalenderPop calenderPop;
     protected RoomAnalyticsDisplayCriteria roomAnalyticsDisplayCriteria;
     protected RoomAnalyticsReport roomAnalyticsReport;
+    protected ProfileManagementPage profileManagementPage;
+    protected ExcludedProfilesPage excludedProfilesPage;
 
 }
 

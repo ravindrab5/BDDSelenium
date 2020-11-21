@@ -4,6 +4,7 @@ Feature: Validate display criteria functionality.
   Background:User Navigates to Revplan System.
     Given I navigate to property homepage.
 
+    @this
     Scenario: Validate the default selected items in display criteria.
       When I open the display criteria.
       Then I should see "Room Nights","Average Rate","Room Revenue" checkbox selected, "RevPar" and "%Contribution" should be unchecked.
