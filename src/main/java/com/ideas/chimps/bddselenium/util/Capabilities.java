@@ -14,7 +14,7 @@ public class Capabilities {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("test-type");
             options.addArguments("--headless");
-
+            options.addArguments("--window-size=1920,969");
             capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 
         }
