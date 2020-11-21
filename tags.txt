@@ -1,1 +1,1 @@
-@reportcriteria,@checkdisplaycriteria
+@reportcriteria,@checkdisplaycriteria,@profilemanagement
