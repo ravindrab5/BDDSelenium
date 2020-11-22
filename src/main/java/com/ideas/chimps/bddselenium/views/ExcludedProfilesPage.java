@@ -254,6 +254,10 @@ public class ExcludedProfilesPage extends PageBase{
         return searchResults.stream().map(WebElement::getText).collect(Collectors.toList());
     }
 
+    public List<String> getSearchResults(){
+        return searchResults.stream().map(WebElement::getText).collect(Collectors.toList());
+    }
+
     public void searchProfileAndSelect(String profileToSearch){
         profileSearchButtonDropdown.click();
         searchField.clear();

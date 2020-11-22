@@ -210,9 +210,6 @@ public class ProfileManagement extends TestBase {
         Assert.assertEquals(actualMsg,expectedMsg);
     }
 
-    public List<String> expectedList(DataTable dataTable){
-        return dataTable.asLists(String.class).stream().flatMap(List::stream).collect(Collectors.toList()).stream().map(Object::toString).collect(Collectors.toList());
-    }
 
     @And("Open the report criteria.")
     public void openTheReportCriteria() {

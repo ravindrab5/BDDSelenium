@@ -1,43 +1,51 @@
-@ProfileManagementExcludedTab
+
 Feature: Account Intel Profile Management Excluded Tab Functionality.
 
   Background: User navigates to the prop homepage
     Given Navigate to property homepage.
     And Account Intel Data Should be present.
 
+  @ProfileManagementExcludedTab
 Scenario: Validate profile name search for master,substring,*child and no result cases
   When I navigate to account intel page and click on excluded tab.
   And I open the profile display criteria.
-  And Search profile "Kuoni Group".
+  And Search profile "Kuoni Group" in profile search.
   Then Search result should display
       |All Profiles|
-      |Kouni Group |
-  When I Search profile "*Lego".
+      |Kuoni Group |
+  When I open the profile display criteria.
+  And Search profile "*Lego" in profile search.
   Then Search result should display
     |All Profiles|
-    |Kouni Group |
-  When I Search profile "*gover".
+    |Kuoni Group |
+  When I open the profile display criteria.
+  And Search profile "*gover" in profile search.
   Then Search result should display
-    |All Profiles         |
+    |All Profiles|
     |Norwegian Government |
-  When I Search profile "asasd".
+  When I open the profile display criteria.
+  And Search profile "asasd" in profile search.
   Then Search result should display
     |No result found      |
 
+  @ProfileManagementExcludedTab
 Scenario: Validate rn filter error messages with invalid rn inputs
   When I navigate to account intel page and click on excluded tab.
   And I open the profile display criteria.
   And I enter rn from data as "-5".
   And Click on Go button.
   Then Error message "Please enter valid RN (from) number.".
-  When I enter rn to data as "-5".
+  When I open the profile display criteria.
+  And I enter rn to data as "-5".
   And Click on Go button.
   Then Error message "Please enter valid RN (To) number.".
-  When I enter rn from data as "5".
+  When I open the profile display criteria.
+  And I enter rn from data as "5".
   And I enter rn to data as "1".
   And Click on Go button.
   Then Error message "To value must be greater than from value.".
 
+  @ProfileManagementExcludedTab
 Scenario: Validate grid data creation based on the rn filter applied.
   When I navigate to account intel page and click on excluded tab.
   And I open the profile display criteria.
@@ -56,13 +64,15 @@ Scenario: Validate grid data creation based on the rn filter applied.
     |Norges Fotballforbund|
     |Norwegian Government |
 
+  @ProfileManagementExcludedTab
 Scenario: Validate grid data creation when profile is selected from profile name and filter is applied
   When I navigate to account intel page and click on excluded tab.
   And I open the profile display criteria.
-  And Search profile "Kuoni Group".
+  And Search profile "Kuoni Group" in profile search and select.
+  And Click on Go button.
   Then Grid should contain data.
     |Kuoni Group        |
-
+  @ProfileManagementExcludedTab
 Scenario: Check single and multiple activate of the profile and check in the activate list
   When I navigate to account intel page and click on excluded tab.
   And I Click on the edit icon

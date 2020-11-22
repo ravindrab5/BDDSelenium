@@ -545,7 +545,7 @@ public class ProfileManagementPage extends PageBase{
 
     public ExcludedProfilesPage navigateToExcludedTab() {
         excludedProfileTab.click();
-        waitForElementToDisappear(WAIT_LOCATOR);
+   //     waitForElementToDisappear(WAIT_LOCATOR);
         return new ExcludedProfilesPage(driver);
     }
 

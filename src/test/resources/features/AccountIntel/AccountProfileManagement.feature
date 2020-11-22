@@ -211,7 +211,7 @@ Feature: Account Intel Profile Management Functionality.
           |National Oilwell Varco     |
           |PricewaterhouseCoopers     |
 
-  @Thisistest
+
   Scenario: Validate error popup is displayed when cyclic linking is done along with activate all operation.
     Given I navigate to account intel page.
     When I click on edit button on grid.
