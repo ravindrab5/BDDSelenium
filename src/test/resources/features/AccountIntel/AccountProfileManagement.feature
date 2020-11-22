@@ -163,6 +163,76 @@ Feature: Account Intel Profile Management Functionality.
       And I navigate to account intel tab.
       Then I should see 2 accounts autolinked to "Eli Lilly & Company".
 
+    Scenario: Validate error popup is displayed when user links parent to new child and child to same parent
+      Given I navigate to account intel page.
+      When Link profile.
+        |Master_Profile|Subprofile                         |
+        |Boston Consulting Group  |Fortum Corporation      |
+        |Fortum Corporation       |Boston Consulting Group |
+      Then I should get popup with message "Invalid linking of profiles!"
+
+
+    Scenario: Validate error popup is displayed when there are cyclic as well as valid profile linking present
+      Given I navigate to account intel page.
+      When I click on edit button on grid.
+      And I link profile "Fortum Corporation" to "Boston Consulting Group".
+      And I link profile "Boston Consulting Group" to "Fortum Corporation".
+      And I link profile "PricewaterhouseCoopers" to "Boston Consulting Group".
+      And I click on the save button of grid.
+      And I click on the ok button of error message.
+      Then Grid should contain profiles.
+        |Airbus Group               |
+        |Boston Consulting Group    |
+        |CHAP BB test               |
+        |Eli Lilly & Company        |
+        |Fortum Corporation         |
+        |Inditex                    |
+        |Microsoft Corporation      |
+        |National Oilwell Varco     |
+        |PricewaterhouseCoopers     |
+
+
+    Scenario: Validate error popup is displayed when cyclic linking is done along with profile actioning(activate)
+      Given I navigate to account intel page.
+      When I click on edit button on grid.
+      And I link profile "Fortum Corporation" to "Boston Consulting Group".
+      And I link profile "Boston Consulting Group" to "Fortum Corporation".
+      And Activate profile "Boston Consulting Group" in profile management screen.
+      And I click on the save button of grid.
+      And I click on the ok button of error message.
+      Then Grid should contain profiles.
+          |Airbus Group               |
+          |Boston Consulting Group    |
+          |CHAP BB test               |
+          |Eli Lilly & Company        |
+          |Fortum Corporation         |
+          |Inditex                    |
+          |Microsoft Corporation      |
+          |National Oilwell Varco     |
+          |PricewaterhouseCoopers     |
+
+  @Thisistest
+  Scenario: Validate error popup is displayed when cyclic linking is done along with activate all operation.
+    Given I navigate to account intel page.
+    When I click on edit button on grid.
+    And I link profile "Fortum Corporation" to "Boston Consulting Group".
+    And I link profile "Boston Consulting Group" to "Fortum Corporation".
+    And I click on the star action icon.
+    And I click on the accept all and close popup.
+    And I click on the save button of grid.
+    And I click on the ok button of error message.
+    Then Grid should contain profiles.
+      |Airbus Group               |
+      |Boston Consulting Group    |
+      |CHAP BB test               |
+      |Eli Lilly & Company        |
+      |Fortum Corporation         |
+      |Inditex                    |
+      |Microsoft Corporation      |
+      |National Oilwell Varco     |
+      |PricewaterhouseCoopers     |
+
+
 
 
 

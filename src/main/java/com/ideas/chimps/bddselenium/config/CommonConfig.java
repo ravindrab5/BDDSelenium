@@ -17,4 +17,10 @@ public class CommonConfig {
     @Value("${base_api}")
     private String baseApiUrl;
 
+    @Value("${headless}")
+    private Boolean headless;
+
+    @Value("${windowsize}")
+    private String windowSize;
+
 }

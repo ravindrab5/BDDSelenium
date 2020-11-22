@@ -225,4 +225,40 @@ public class ProfileManagement extends TestBase {
     }
 
 
+    @When("I click on edit button on grid.")
+    public void iClickOnEditButtonOnGrid() {
+        profileManagementPage.clickEditIcon();
+    }
+
+    @And("I link profile {string} to {string}.")
+    public void iLinkProfileTo(String arg0, String arg1) {
+        profileManagementPage.linkProfile(arg1,arg0);
+    }
+
+    @And("I click on the save button of grid.")
+    public void iClickOnTheSaveButtonOfGrid() {
+        profileManagementPage.clickSave();
+    }
+
+
+    @And("I click on the ok button of error message.")
+    public void iClickOnTheOkButtonOfErrorMessage() {
+        profileManagementPage.clickOk();
+    }
+
+    @And("I click on the star action icon.")
+    public void iClickOnTheStarActionIcon() {
+        profileManagementPage.clickStarReactivateIcon();
+    }
+
+    @And("I click on the accept all and close popup.")
+    public void iClickOnTheAcceptAllAndClosePopup() {
+        profileManagementPage.clickAcceptAll();
+        profileManagementPage.closeButtonStarAction();
+    }
+
+    @And("Activate profile {string} in profile management screen.")
+    public void activateProfileInProfileManagementScreen(String arg0) {
+        profileManagementPage.activateAccount(arg0);
+    }
 }

@@ -25,7 +25,7 @@ public class DriverFactory implements FactoryBean<WebDriver> {
     @Override
     public WebDriver getObject() throws MalformedURLException {
 
-        DesiredCapabilities cap=new Capabilities().getCapabilities(config.getBrowser());
+        DesiredCapabilities cap=new Capabilities().getCapabilities(config);
         String url="http://"+config.getHubUrl()+":4444/wd/hub";
 
         final WebDriver driver;

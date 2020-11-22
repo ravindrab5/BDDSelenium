@@ -1,5 +1,6 @@
 package com.ideas.chimps.bddselenium.util;
 
+import com.ideas.chimps.bddselenium.config.CommonConfig;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -7,14 +8,16 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class Capabilities {
     private DesiredCapabilities capabilities;
 
-    public DesiredCapabilities getCapabilities(String browser){
-        if(browser.equalsIgnoreCase("chrome")){
+    public DesiredCapabilities getCapabilities(CommonConfig config){
+        if(config.getBrowser().equalsIgnoreCase("chrome")){
             capabilities = DesiredCapabilities.chrome();
 
             ChromeOptions options = new ChromeOptions();
             options.addArguments("test-type");
-            options.addArguments("--headless");
-            options.addArguments("--window-size=1920,969");
+            if(config.getHeadless()) {
+                options.addArguments("--headless");
+                options.addArguments(config.getWindowSize());
+            }
             capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 
         }
