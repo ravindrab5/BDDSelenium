@@ -1,1 +1,1 @@
-@reportcriteria,@checkdisplaycriteria,@profilemanagement
+@reportcriteria,@checkdisplaycriteria,@profilemanagement,@ProfileManagementExcludedTab
