@@ -47,9 +47,9 @@ public class AccountIntelExcludedTab extends TestBase {
 
 
     @Then("Search result should display")
-    public void searchResultShouldDisplay(DataTable dataTable) {
+    public void searchResultShouldDisplay(List<String> data) {
         List<String> actual = excludedProfilesPage.getSearchResults();
-        List<String> expected = expectedList(dataTable);
+        List<String> expected = data;
         Assert.assertEquals(actual, expected);
     }
 

@@ -4,8 +4,6 @@ import com.ideas.chimps.bddselenium.actionhelpers.AccountIntelActions;
 import com.ideas.chimps.bddselenium.actionhelpers.UserTypeConstants;
 import com.ideas.chimps.bddselenium.entities.User;
 import com.ideas.chimps.bddselenium.tests.TestBase;
-
-import com.ideas.chimps.bddselenium.views.ExcludedProfilesPage;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -13,7 +11,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -82,9 +79,10 @@ public class ProfileManagement extends TestBase {
     }
 
     @Then("Grid should contain profiles.")
-    public void gridShouldContainProfiles(DataTable dataTable) {
+    public void gridShouldContainProfiles(List<String> data) {
         List<String> actualList = profileManagementPage.allMasterProfiles();
-        List<String> expected=expectedList(dataTable);
+        List<String> expected=data;
+                //expectedList(dataTable);
         Assert.assertEquals(actualList,expected);
 
         //dataTable.asMaps().get("Profiles")

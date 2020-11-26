@@ -5,6 +5,7 @@ Feature: Account Intel Profile Management Functionality.
     Given User navigate to property homepage.
     And Profiles and its reservation are populated already.
 
+    @sample
   Scenario: Validate grid data is sorted from high to low.
     When I navigate to account intel page.
     And Select the criteria with sort high to low for rn.
