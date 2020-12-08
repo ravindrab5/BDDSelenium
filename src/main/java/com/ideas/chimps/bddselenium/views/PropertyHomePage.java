@@ -46,6 +46,10 @@ public class PropertyHomePage extends PageBase {
     @FindBy(xpath="//li[a[text()='Revenue']]/ul/li/a[text()='Rooms']")
     private WebElement roomsInRevAnalyticsOfPlanning;
 
+    @UIName(uiName = "PRODUCTION")
+    @FindBy(xpath = "//li[a[text()='Accounts']]/ul/li/a[text()='Production']")
+    private WebElement productionSubMenu;
+
     public RoomTrendDashBoard navigateToRoomTrend(){
         Actions actions=new Actions(driver);
         actions.moveToElement(planningButton).moveToElement(revAnalyticsOptionInPlanning).moveToElement(roomsInRevAnalyticsOfPlanning).click().build().perform();
@@ -58,4 +62,11 @@ public class PropertyHomePage extends PageBase {
         actions.moveToElement(driver.findElement(By.xpath("//a[contains(text(),'Profile Status')]"))).build().perform();
         return new ProfileManagementPage(driver);
     }
+
+    public AccountSummaryReportPage navigateToProduction(){
+        Actions actions=new Actions(driver);
+        actions.moveToElement(intelButton).moveToElement(accountsInmenu).moveToElement(productionSubMenu).click().build().perform();
+        return new AccountSummaryReportPage(driver);
+    }
+
 }

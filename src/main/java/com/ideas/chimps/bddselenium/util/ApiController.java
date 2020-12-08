@@ -193,7 +193,6 @@ public class ApiController {
 
 
         logger.info("Response + "+response.statusCode()+" | "+response.getStatusLine());
-        logger.info("Response + "+response.getBody());
 
 
         String jsonPath="$..propertyId";
@@ -205,7 +204,6 @@ public class ApiController {
         Integer propId=Integer.parseInt(String.valueOf(propertyId.get(0)));
 
         logger.info("Response + "+response.statusCode()+" | "+response.getStatusLine());
-        logger.info("Response + "+response.getBody());
 
         property.setPropertyId(propId);
         return response;
@@ -295,7 +293,6 @@ public class ApiController {
             logger.info("Creating impact event with + " + payload);
             Response response = given().header("content-type", "application/json").header("Authorization", "Bearer " + loginToken)
                     .when()
-                    .log().all()
                     .body(payload)
                     .queryParams(queryParams)
                     .post(apiConfig.getImpactEvent()+"/"+managementCompany.getClientCode().toLowerCase()+"/"+property.getPmsId());

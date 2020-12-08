@@ -10,8 +10,10 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
+import stepdefs.TestContext;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -22,6 +24,11 @@ import java.util.stream.Collectors;
 public class CheckDisplayCriteria extends TestBase {
 
     protected RoomAnalyticsActions roomAnalyticsActions;
+
+
+    public CheckDisplayCriteria(TestContext testContext){
+        System.out.println(testContext);
+    }
 
     @Given("I navigate to property homepage.")
     public void iNavigateToPropertyHomepage() {

@@ -215,6 +215,13 @@ public class PageBase {
     public String getDynamicXpath(String xPath, String newString) {
         return xPath.replaceFirst(OLD_STRING, newString);
     }
+
+    public List<WebElement> getListOfDynamicWebElements(String xPath, String newString) {
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        return driver.findElements(By.xpath(xPath.replace(OLD_STRING, newString)));
+    }
+
+
     protected void pauseTest(Integer timeinmilliseconds){
         try{
             TimeUnit.MILLISECONDS.sleep(timeinmilliseconds);
@@ -222,5 +229,10 @@ public class PageBase {
             return;
         }
 
+    }
+
+    public WebElement getDynamicWebElement(String xPath, String newString) {
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        return driver.findElement(By.xpath(xPath.replace(OLD_STRING, newString)));
     }
 }
