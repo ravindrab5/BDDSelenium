@@ -1,5 +1,5 @@
 @ProfileManagementExcludedTab
-Feature: Account Intel Profile Management Excluded Tab Functionality.
+Feature: Account Intel Profile Management Excluded Tab.
 
   Background: User navigates to the prop homepage
     Given Navigate to property homepage.

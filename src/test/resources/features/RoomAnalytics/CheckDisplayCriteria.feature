@@ -1,5 +1,5 @@
 @checkdisplaycriteria
-Feature: Validate display criteria functionality.
+Feature: Room Analytics Display Criteria.
 
   Background:User Navigates to Revplan System.
     Given I navigate to property homepage.

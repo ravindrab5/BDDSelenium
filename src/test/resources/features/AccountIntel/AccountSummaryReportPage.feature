@@ -1,5 +1,5 @@
 @AccountSummaryTest
-Feature: Account Intel Profile Management SummaryReport Functionality
+Feature: Account Intel Account Summary.
 
   Background: User navigates to the prop homepage
     Given Navigate to property homepage for production.

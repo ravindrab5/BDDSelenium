@@ -1,5 +1,5 @@
 @reportcriteria
-Feature: Check Default criteria & display criteria of room analytics.
+Feature: Room Analytics Report Criteria
 
   Background: User navigates to the prop homepage
     Given I navigate to prop homepage.
